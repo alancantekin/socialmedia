@@ -1,0 +1,271 @@
+/* GENERAL STYLING */
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Imago';
+    font-size: 1em;
+}
+a:hover, input[type=checkbox]:hover, input[type=file]:hover {
+  cursor: pointer;
+}
+
+/* NAVIGATION BAR */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #E5E7E9;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    vertical-align: middle;
+    z-index: 1;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a, li h1, .navButton {
+    display: block;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+  }
+  
+  li .h1 {
+    padding: 0.4em 1em;
+  }
+  
+  li a, .navButton {
+    padding: 1.4em 1em;
+  }
+
+  li a:hover, li a:hover .fa-user, li a:hover .fa-plus-circle, li a:hover .navCommentIcon, .navButton:hover {
+    color: #7B7D7D;
+    cursor: pointer;
+  }
+
+  .right{
+    float: right;
+  }
+
+  .active {
+    border-bottom: 2px solid black;
+  }
+
+  .navButton{
+    background: none;
+    border: none;
+    font-weight: bold;
+  }
+
+/* GENERAL PAGE STYLING */
+h1, li .h1 {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.content {
+  width: 80%;
+  min-width: 500px;
+  max-width: 1300px;
+  margin: 5.5em auto 2em;
+}
+
+p, .p{
+  margin: 0.5em 0 0.25em;
+}
+
+/* INDEX.PHP CONTENT STYLING */
+.wrapper{
+  display: none;
+  grid-gap: 1.25em;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr) );
+  grid-auto-rows: 0;
+}
+#loader { /* LOADING ICON */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 8px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 8px solid #3498db;
+  width: 50px;
+  height: 50px;
+  -webkit-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ADD ANIMATION TO LOADED POSTS */
+.animate {
+  position: relative;
+  -webkit-animation-name: animatefade;
+  -webkit-animation-duration: 1s;
+  animation-name: animatefade;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatefade {
+  from { opacity:0 } 
+  to { opacity:1 }
+}
+
+@keyframes animatefade { 
+  from{ opacity:0 } 
+  to{ opacity:1 }
+}
+
+.overlay{
+  width: 100%;
+  position: relative;
+}
+  .overlay:hover .buttonoverlay {
+    opacity: 0.75;
+  }
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.buttonoverlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .3s ease;
+  background-color: white;
+}
+
+.icon {
+  font-size: 2em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.fas, .far{
+  color: darkgray;
+}
+  .fas:hover, .far:hover{
+    color:black;
+  }
+.navCommentIcon, .fa-plus-circle, .fa-user {
+  color: black;
+}
+
+/* FORM STYLING AND BELONGINGS TO FORM SUCH AS DISPLAYING THE COMMENTS */
+/* TEXT BOX, PASSWORD BOX, TEXTAREA & SUBMIT BUTTON */
+input[type=text], input[type=password], input[type=file], textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  margin: 0.5em 0 0.5em;
+}
+#comments{
+  margin-left: 2em;
+  width: 65%;
+}
+.deleteComment{
+  margin: auto;
+  float: right;
+  margin-right: 0;
+}
+.commentForm{
+  position: fixed;
+  bottom: 0;
+  width: 80%;
+  min-width: 500px;
+  max-width: 1300px;
+  background-color: white;
+}
+.commentImg{
+  width: 35%;
+}
+  .commentImg img{
+    margin-bottom: 0.5em;
+  }
+.commentInput{
+  width: auto;
+}
+.commentButton{
+  background: none;
+  border: none;
+  font-size: 2em;
+  padding: 0;
+  margin: 0;
+  margin-left: 0.5em;
+}
+  .commentButton:hover{
+    background: none;
+  }
+
+.createdInfo{
+  margin: 0;
+  padding: 0;
+  font-size: 0.75em;
+  color: gray;
+}
+
+button {
+  background-color: gray;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 0.5em;
+}
+  button:hover {
+    background-color: black;
+  }
+
+.deleteButton{
+  background-color: orangered;
+}
+  .deleteButton:hover{
+    background-color: red;
+  }
+
+/* CLASS SHORTCUTS */
+.flex{
+  display: flex;
+}
+
+.halfwidth{
+  width: 50%;
+}
+
+.marginright{
+  margin-right: 0.5em;
+}
+
+.marginbottom{
+  margin-bottom: 1em;
+}
